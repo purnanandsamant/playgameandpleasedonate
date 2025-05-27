@@ -285,7 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Donation modal buttons
     donateNowBtn.addEventListener('click', () => {
         closeDonationModal();
-        // Continue the game after donation
+        // Redirect to donation page
+        window.location.href = document.getElementById('donate-link').href;
+        // Continue the game after donation prompt
         continueAfterPrompt();
     });
     
@@ -671,6 +673,8 @@ function showDonationPrompt() {
         donateNowBtn.hasEventListener = true;
         donateNowBtn.addEventListener('click', () => {
             closeDonationModal();
+            // Redirect to donation page
+            window.location.href = document.getElementById('donate-link').href;
             // Continue the game after donation prompt
             continueAfterPrompt();
         });
