@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math for a Cause - Support Our School!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="kid-photo">
+                    <!-- Replace src with your kid's photo -->
+                    <img src="kid-photo.jpeg" alt="Student" id="kid-photo">
+                </div>
+                <div class="header-text">
+                    <h1>🏫 Math for a Cause</h1>
+                    <p class="subtitle">Play, learn, and support our school!</p>
+                </div>
+            </div>
+            <div class="header-decorations">
+                <span class="decoration">✏️</span>
+                <span class="decoration">📚</span>
+                <span class="decoration">🔢</span>
+                <span class="decoration">🎓</span>
+                <span class="decoration">🎨</span>
+            </div>
+        </header>
+        
+        <!-- Video Modal - Simple Version -->
+        <div id="welcome-overlay">
+            <div id="welcome-container">
+                <div id="video-wrapper">
+                    <iframe 
+                        id="youtube-video" 
+                        width="560" 
+                        height="315"
+                        src=""
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <button id="close-welcome">Close Video</button>
+            </div>
+        </div>
+        
+        <!-- Nickname Modal -->
+        <div id="nickname-modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🎮 Enter Your Nickname 🎮</h2>
+                <p>Let others see your amazing scores!</p>
+                <input type="text" id="player-name" placeholder="Your nickname" maxlength="15">
+                <button id="start-with-name">Start Game</button>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="game-area">
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="school-visual">
+                    <div class="clouds">
+                        <span class="cloud">☁️</span>
+                        <span class="cloud">☁️</span>
+                    </div>
+                    <div id="school-base">🏫</div>
+                    <div id="school-addons"></div>
+                    <div class="school-ground">
+                        <span class="tree">🌳</span>
+                        <span class="tree">🌲</span>
+                        <span class="tree">🌳</span>
+                    </div>
+                </div>
+                <div id="question-container">
+                    <p id="question">Ready to start?</p>
+                    <div class="timer-container">
+                        <div class="timer-bar" id="timer-bar"></div>
+                        <div class="timer-text" id="timer-text">10s</div>
+                    </div>
+                    <input type="number" id="answer" placeholder="Your answer..." disabled>
+                    <button id="submit-btn">Start Game</button>
+                </div>
+                <div id="score-container">
+                    <p>Score: <span id="score">0</span></p>
+                    <p>Best: <span id="high-score">0</span></p>
+                </div>
+            </div>
+
+            <div class="donation-panel">
+                <h2>Help Build Our School! <span class="heart-icon">❤️</span></h2>
+                <div class="score-badge">
+                    <p>Your score: <span id="donation-score">0</span> points 🏆</p>
+                </div>
+                <div class="donation-value">
+                    <p>That could be worth $<span id="donation-amount">0</span> for P.E., Art & Music!<br><small>(Milestones: 50, 100, 150, 200 pts)</small></p>
+                </div>
+                <div class="donation-message">
+                    <p><em>Every dollar helps us build a better future for our children.</em> <span class="star-icon">⭐</span></p>
+                </div>
+                <a href="https://getmovinfundhub.com/student-webpage/682e5f1fd8c744.33624708" class="donate-btn" target="_blank" id="donate-link">
+                    Donate Now
+                </a>
+                <div class="milestones">
+                    <h3>Our Goals: <span class="goal-icon">🎯</span></h3>
+                    <ul class="milestone-list">
+                        <li data-points="50"><span class="milestone-icon">🏃‍♂️</span> P.E. Program Support</li>
+                        <li data-points="100"><span class="milestone-icon">🎨</span> Art Program Support</li>
+                        <li data-points="150"><span class="milestone-icon">🎶</span> Music Program Support</li>
+                        <li data-points="200"><span class="milestone-icon">🏆</span> Fundraising Goal: $50,000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="donation-modal" id="donation-modal">
+            <div class="modal-content">
+                <h2>Amazing Job! 🎉</h2>
+                <p>You've earned <span id="modal-points">0</span> points!</p>
+                <p>Would you like to support our school by making a donation?</p>
+                <div class="modal-buttons">
+                    <button id="donate-now">Donate Now</button>
+                    <button id="not-now">Not Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Leaderboard Modal -->
+    <div id="leaderboard-modal" style="display: none;">
+        <div class="modal-content leaderboard-content">
+            <h2>🏆 Leaderboard 🏆</h2>
+            <div id="leaderboard-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <button id="close-leaderboard">Close</button>
+        </div>
+    </div>
+    
+    <!-- Leaderboard Button -->
+    <div class="leaderboard-button-container">
+        <button id="show-leaderboard">🏆 View Leaderboard</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
